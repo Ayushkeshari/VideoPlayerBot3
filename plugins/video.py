@@ -99,7 +99,7 @@ async def end_callbacc(client, CallbackQuery):
     await CallbackQuery.message.delete()
 
 
-@Client.on_message(filters.command(["stream", f"stream@{USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(filters.command(["vplay", f"vplay@{USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
 async def vplay(client, m: Message):
     msg = await m.reply_text("🔄 `Processing ...`")
@@ -287,7 +287,7 @@ async def resume(_, m: Message):
         await m.reply_text("❌ **Noting Is Streaming !**")
 
 
-@Client.on_message(filters.command(["endstream", f"endstream@{USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(filters.command(["end", f"end@{USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
 async def end(client, m: Message):
     msg = await m.reply_text("🔄 `Processing ...`")
